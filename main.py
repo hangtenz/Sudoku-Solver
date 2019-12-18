@@ -11,6 +11,8 @@ default_board = []
 solve_board = []
 speed = 1000
 isSolve = False
+lastRow = -1
+lastCol = -1
 
 def find_empty_location(board,l):
     for row in range(9):
@@ -105,6 +107,9 @@ def showBackTrack():
     global numbers
     global solve_board
     global speed
+    global lastRow
+    global lastCol
+    global default_board
     if(len(data)==0):
         return
     try:
@@ -119,6 +124,13 @@ def showBackTrack():
                 if(i==row and j==col):
                     continue
                 numbers[i][j]['bg'] = 'white'
+        if(row<=lastRow and col<lastCol and lastRow!=-1 and lastCol!=-1):
+            for i in range(row,lastRow+1):
+                for j in range(col,lastCol+1):
+                    if(default_board[i][j]==-1):
+                        numbers[i][j]['text'] = ""
+        lastRow = row
+        lastCol = col
         master.after(speed,showBackTrack)
     except:
         print('call back')
