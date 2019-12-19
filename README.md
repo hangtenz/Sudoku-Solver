@@ -1,5 +1,8 @@
 # Sudoku-Solver
 
+### What is Sudoku??
+[Sudoku<br/>](https://en.wikipedia.org/wiki/Sudoku)
+
 ### How to use
 ```
 - pip install -r requirements.txt
