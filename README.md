@@ -7,4 +7,4 @@
 ```
 
 ### Screenshot
-![alt text](https://https://github.com/hangtenz/Sudoku-Solver/blob/master/Screenshot.JPG)
+![alt text](https://raw.githubusercontent.com/hangtenz/Sudoku-Solver/blob/master/Screenshot.JPG)
