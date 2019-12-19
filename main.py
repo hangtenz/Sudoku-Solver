@@ -117,6 +117,11 @@ def showBackTrack():
         row = datax[0]
         col = datax[1]
         value = datax[2]
+        if(row<=lastRow and col<lastCol and lastRow!=-1 and lastCol!=-1):
+            for i in range(row,lastRow+1):
+                for j in range(col,lastCol+1):
+                    if(default_board[i][j]==-1):
+                        numbers[i][j]['text'] = ""
         numbers[row][col]['text'] = str(value)
         numbers[row][col]['bg'] = 'purple'
         for i in range(9):
@@ -124,11 +129,6 @@ def showBackTrack():
                 if(i==row and j==col):
                     continue
                 numbers[i][j]['bg'] = 'white'
-        if(row<=lastRow and col<lastCol and lastRow!=-1 and lastCol!=-1):
-            for i in range(row,lastRow+1):
-                for j in range(col,lastCol+1):
-                    if(default_board[i][j]==-1):
-                        numbers[i][j]['text'] = ""
         lastRow = row
         lastCol = col
         master.after(speed,showBackTrack)
